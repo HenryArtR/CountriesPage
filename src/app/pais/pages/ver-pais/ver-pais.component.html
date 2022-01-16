@@ -1,0 +1,54 @@
+<div *ngIf="!verpais; else divPais"
+    class="alert alert-info">
+    Espere por favor...
+</div>
+<ng-template #divPais >
+
+    <div class="row">
+        <div class="col-12">
+            <h1>País: <small>{{verpais.name}}</small></h1>
+        </div>
+        <div class="col-4">
+            <h3>Bandera</h3>
+            <img [src]="verpais.flag" class="img-thumbnail" title="flag">
+        </div>
+        <div class="col-4">
+            <h3>Información</h3>
+            <ul class="list-group">
+                <li class="list-group-item">
+                    <strong>Poblacion</strong> {{verpais.population | number}}
+                </li>
+                <li class="list-group-item">
+                    <strong>Código Numérico</strong> {{verpais.numericCode }}
+                </li>
+                <li class="list-group-item">
+                    <strong>Código Alpha</strong> {{verpais.alpha3Code }}
+                </li>     
+            </ul>
+        </div>
+
+    </div>
+    <h3>Traducciones</h3>
+    <div class="row">
+        <div class="col">
+
+            <span class="badge bg-primary me-2">{{verpais.translations.de}}</span>
+            <span class="badge bg-primary me-2">{{verpais.translations.es}}</span>
+            <span class="badge bg-primary me-2">{{verpais.translations.ja}}</span>
+            <span class="badge bg-primary me-2">{{verpais.translations.it}}</span>
+            <span class="badge bg-primary me-2">{{verpais.translations.br}}</span>
+            <span class="badge bg-primary me-2">{{verpais.translations.pt}}</span>
+            <span class="badge bg-primary me-2">{{verpais.translations.nl}}</span>
+            <span class="badge bg-primary me-2">{{verpais.translations.hr}}</span>
+            <span class="badge bg-primary me-2">{{verpais.translations.fa}}</span>
+
+        </div>
+    </div>
+
+    <!-- <pre class="mt-5">
+        {{verpais | json}}
+    </pre> -->
+
+    
+
+</ng-template>
