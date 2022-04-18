@@ -18,6 +18,7 @@ export class PorCapitalComponent implements OnInit {
   buscar( termino: string ){
     this.hayError = false;
     this.termino = termino;
+    this.paises = []
     this.paisSrv.buscarCapital(this.termino)
     .subscribe( (paises) => {
       this.paises = paises
